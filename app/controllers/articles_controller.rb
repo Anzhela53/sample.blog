@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
-    before_action :authenticate_user! #на всех страницах появляется форма регистрации
+    before_action :authenticate_user!, :only => [:create ]
+    #before_action :authenticate_user! #на всех страницах появляется форма регистрации
 
     def index
         @articles = Article.all
